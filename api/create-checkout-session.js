@@ -69,6 +69,7 @@ export default async function handler(req, res) {
         orderType,
         customerName: `${customerInfo.firstName} ${customerInfo.lastName}`,
         customerPhone: customerInfo.phone,
+        customerEmail: customerInfo.email, // AJOUT: email dans metadata aussi
         customerAddress: orderType === 'delivery' 
           ? `${customerInfo.address}, ${customerInfo.postalCode} ${customerInfo.city}`
           : 'Sur place',

@@ -34,16 +34,32 @@ export default async function handler(req, res) {
   }
 
   if (event.type === 'checkout.session.completed') {
-    const session = event.data.object;
-    console.log('✅ Payment received:', session.id);
-    console.log('📧 Customer email:', session.customer_email);
-    console.log('📦 Metadata:', JSON.stringify(session.metadata));
+    const sessionFromEvent = event.data.object;
+    console.log('✅ Payment received:', sessionFromEvent.id);
+    
+    // Récupérer la session complète avec customer_details
+    let session;
+    try {
+      session = await stripe.checkout.sessions.retrieve(sessionFromEvent.id, {
+        expand: ['customer_details', 'line_items']
+      });
+      console.log('📧 Customer email from session:', session.customer_email);
+      console.log('📧 Customer details email:', session.customer_details?.email);
+      console.log('📦 Metadata:', JSON.stringify(session.metadata));
+    } catch (e) {
+      console.error('Error retrieving session:', e);
+      session = sessionFromEvent;
+    }
 
     // Récupérer les line_items
     let lineItems = [];
     try {
-      const items = await stripe.checkout.sessions.listLineItems(session.id, { limit: 100 });
-      lineItems = items.data;
+      if (session.line_items?.data) {
+        lineItems = session.line_items.data;
+      } else {
+        const items = await stripe.checkout.sessions.listLineItems(session.id, { limit: 100 });
+        lineItems = items.data;
+      }
       console.log('📋 Line items:', lineItems.length);
     } catch (e) {
       console.error('Error fetching line items:', e);
@@ -158,21 +174,29 @@ ${meta.notes ? `📝 *Notes:* ${meta.notes}\n` : ''}
 async function sendEmailToCustomer(session, lineItems) {
   const resendApiKey = process.env.RESEND_API_KEY;
   if (!resendApiKey) {
-    console.log('RESEND_API_KEY not configured');
+    console.log('❌ RESEND_API_KEY not configured');
     return null;
   }
 
   const meta = session.metadata || {};
   const orderId = session.id.slice(-8).toUpperCase();
   const total = (session.amount_total / 100).toFixed(2);
-  const customerEmail = session.customer_email;
+  
+  // Récupérer l'email depuis customer_email OU depuis metadata
+  const customerEmail = session.customer_email || session.customer_details?.email || meta.customerEmail;
+  
+  console.log('📧 Looking for customer email...');
+  console.log('   - session.customer_email:', session.customer_email);
+  console.log('   - session.customer_details?.email:', session.customer_details?.email);
+  console.log('   - meta.customerEmail:', meta.customerEmail);
+  console.log('   - Final customerEmail:', customerEmail);
   
   if (!customerEmail) {
-    console.log('No customer email in session');
+    console.log('❌ No customer email found anywhere!');
     return null;
   }
 
-  console.log('Preparing email for:', customerEmail);
+  console.log('✅ Sending email to:', customerEmail);
 
   let itemsDetails = [];
   try {
