@@ -152,7 +152,7 @@ export default function Home() {
                 </Link>
                 <div className="flex items-center gap-2 text-white/60">
                   <MapPin className="w-5 h-5 text-emerald-400" />
-                  <span>123 Rue de la Gastronomie, 62000 Arras</span>
+                  <span>135 Ter Rue Jules Guesde, 62800 Liévin</span>
                 </div>
               </div>
             </div>

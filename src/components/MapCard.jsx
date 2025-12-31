@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { MapPin, ExternalLink, Clock, Phone } from 'lucide-react';
-import { MAP_LINK, RESTAURANT_CONFIG } from '../utils/constants';
+import { MAP_LINK, MAP_EMBED_URL, RESTAURANT_CONFIG } from '../utils/constants';
+import { RESTAURANT_INFO } from '../utils/helpers';
 
 export default function MapCard() {
   return (
@@ -35,8 +36,9 @@ export default function MapCard() {
                   <Clock className="w-5 h-5 text-white/70 mt-0.5 flex-shrink-0" />
                   <div>
                     <p className="text-white font-medium">Horaires</p>
-                    <p className="text-white/80 text-sm">Lun - Sam: 11h - 23h</p>
-                    <p className="text-white/80 text-sm">Dimanche: 12h - 22h</p>
+                    <p className="text-white/80 text-sm">Lun - Mar: 11h-15h / 18h-22h</p>
+                    <p className="text-white/80 text-sm">Mercredi: 11h-22h</p>
+                    <p className="text-white/80 text-sm">Jeu - Dim: 11h-15h / 18h-22h</p>
                   </div>
                 </div>
                 
@@ -71,7 +73,7 @@ export default function MapCard() {
             {/* Map preview */}
             <div className="relative h-64 md:h-auto min-h-[300px] bg-gray-100">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2532.5!2d2.77!3d50.29!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDE3JzI0LjAiTiAywrA0NicxMi4wIkU!5e0!3m2!1sfr!2sfr!4v1234567890"
+                src={MAP_EMBED_URL}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -82,7 +84,6 @@ export default function MapCard() {
                 title="Localisation DWICH62"
               />
               
-              {/* Click overlay to open in Google Maps */}
               <a
                 href={MAP_LINK}
                 target="_blank"

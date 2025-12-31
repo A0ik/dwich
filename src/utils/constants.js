@@ -1,13 +1,16 @@
 // Configuration du restaurant
 export const RESTAURANT_CONFIG = {
   name: 'DWICH62',
-  phone: '03 21 12 34 56',
-  email: 'contact@dwich62.fr',
-  address: '123 Rue de la Gastronomie, 62000 Arras',
+  phone: '07 67 46 95 02',
+  email: 'dwich62bruay@gmail.com',
+  address: '135 Ter Rue Jules Guesde, 62800 Liévin',
 };
 
-// Lien Google Maps - REMPLACE PAR TON LIEN
-export const MAP_LINK = "https://maps.google.com/?q=123+Rue+de+la+Gastronomie+62000+Arras";
+// Lien Google Maps
+export const MAP_LINK = "https://www.google.com/maps/search/?api=1&query=135+Ter+Rue+Jules+Guesde+62800+Liévin";
+
+// URL iframe Google Maps pour la vraie adresse
+export const MAP_EMBED_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2534.8!2d2.7789!3d50.4178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dd30e5f3c4c9c7%3A0x0!2s135%20Ter%20Rue%20Jules%20Guesde%2C%2062800%20Li%C3%A9vin!5e0!3m2!1sfr!2sfr!4v1704067200000";
 
 // Frais de livraison en centimes (500 = 5€)
 export const DELIVERY_FEE = 500;
