@@ -46,7 +46,7 @@ export const menuData = {
       name: "Salade Dwich & Assiettes",
       description: "Salade Dwich (avec boisson) et assiettes avec viandes au choix",
       emoji: "🥗",
-      image: "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80",
+      image: "/images/salade-dwich.png",
       products: [
         {
           slug: "salade-dwich",
@@ -54,7 +54,7 @@ export const menuData = {
           description: "Poulet ou viande au choix, salade, tomate, oignons rouges, maïs, cranberry, graines",
           basePrice: 900,
           includesDrink: true,
-          image: "https://images.unsplash.com/photo-1543339308-43e59d6b73a6?w=600&q=80",
+          image: "/images/salade-dwich.png",
           optionGroups: [
             {
               slug: "viande-salade",
@@ -76,7 +76,7 @@ export const menuData = {
           name: "Assiette",
           description: "Crudités, frites et viandes au choix",
           basePrice: 1000,
-          image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&q=80",
+          image: "/images/assiette.png",
           optionGroups: [
             {
               slug: "taille-assiette",
@@ -138,7 +138,7 @@ export const menuData = {
       name: "Nos Tacos",
       description: "Garnis de frites et de sauce fromagère",
       emoji: "🌮",
-      image: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&q=80",
+      image: "/images/tacos2.png",
       products: [
         {
           slug: "tacos",
@@ -146,7 +146,7 @@ export const menuData = {
           description: "Garni de frites et sauce fromagère",
           basePrice: 900,
           includesDrink: true,
-          image: "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80",
+          image: "/images/tacos2.png",
           optionGroups: [
             {
               slug: "taille-tacos",
@@ -218,14 +218,14 @@ export const menuData = {
       name: "Nos Burgers",
       description: "Burger seul ou en menu (Frites + Boisson)",
       emoji: "🍔",
-      image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80",
+      image: "/images/Giant.png",
       products: [
         {
           slug: "cheese",
           name: "Cheese",
           description: "Steak 45g, salade, fromage",
           basePrice: 350,
-          image: "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?w=600&q=80",
+          image: "/images/cheese.png",
           optionGroups: [
             {
               slug: "formule-burger",
@@ -246,7 +246,7 @@ export const menuData = {
           name: "Double Cheese",
           description: "2 steaks 45g, salade, fromage",
           basePrice: 500,
-          image: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=600&q=80",
+          image: "/images/double-cheese.png",
           optionGroups: [
             {
               slug: "formule-burger",
@@ -267,7 +267,7 @@ export const menuData = {
           name: "Triple Cheese",
           description: "3 steaks 45g, salade, fromage",
           basePrice: 650,
-          image: "https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=600&q=80",
+          image: "/images/triple-cheese.png",
           optionGroups: [
             {
               slug: "formule-burger",
@@ -288,7 +288,7 @@ export const menuData = {
           name: "Woping Simple",
           description: "Steak 90g grill, cornichons, salade, tomate, oignons, fromage",
           basePrice: 750,
-          image: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&q=80",
+          image: "/images/woping.png",
           optionGroups: [
             {
               slug: "formule-burger",
@@ -309,49 +309,7 @@ export const menuData = {
           name: "Double Woping",
           description: "2 steaks 90g grill, cornichons, salade, tomate, oignons, fromage",
           basePrice: 800,
-          image: "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=600&q=80",
-          optionGroups: [
-            {
-              slug: "formule-burger",
-              name: "Formule",
-              type: "SINGLE",
-              required: true,
-              options: [
-                { name: "Burger Seul", priceDelta: 0 },
-                { name: "Menu (Frites + Boisson)", priceDelta: 200 }
-              ]
-            },
-            BURGER_SAUCES_GROUP,
-            BOISSON_GROUP
-          ]
-        },
-        {
-          slug: "bacon-burger",
-          name: "Bacon Burger",
-          description: "Steak 90g, bacon dinde, salade, tomate, oignons, fromage",
-          basePrice: 650,
-          image: "https://images.unsplash.com/photo-1553909489-cd47e0907980?w=600&q=80",
-          optionGroups: [
-            {
-              slug: "formule-burger",
-              name: "Formule",
-              type: "SINGLE",
-              required: true,
-              options: [
-                { name: "Burger Seul", priceDelta: 0 },
-                { name: "Menu (Frites + Boisson)", priceDelta: 200 }
-              ]
-            },
-            BURGER_SAUCES_GROUP,
-            BOISSON_GROUP
-          ]
-        },
-        {
-          slug: "giant",
-          name: "Giant",
-          description: "2 steaks 90g, sauce giant, fromage",
-          basePrice: 790,
-          image: "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=600&q=80",
+          image: "/images/double-woping.png",
           optionGroups: [
             {
               slug: "formule-burger",
@@ -372,7 +330,49 @@ export const menuData = {
           name: "Triple Woping",
           description: "3 steaks 90g au grill, cornichons, salade, tomate, oignons, fromage",
           basePrice: 900,
-          image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80",
+          image: "/images/triple-woping.png",
+          optionGroups: [
+            {
+              slug: "formule-burger",
+              name: "Formule",
+              type: "SINGLE",
+              required: true,
+              options: [
+                { name: "Burger Seul", priceDelta: 0 },
+                { name: "Menu (Frites + Boisson)", priceDelta: 200 }
+              ]
+            },
+            BURGER_SAUCES_GROUP,
+            BOISSON_GROUP
+          ]
+        },
+        {
+          slug: "bacon-burger",
+          name: "Bacon Burger",
+          description: "Steak 90g, bacon dinde, salade, tomate, oignons, fromage",
+          basePrice: 650,
+          image: "/images/bacon-burger.png",
+          optionGroups: [
+            {
+              slug: "formule-burger",
+              name: "Formule",
+              type: "SINGLE",
+              required: true,
+              options: [
+                { name: "Burger Seul", priceDelta: 0 },
+                { name: "Menu (Frites + Boisson)", priceDelta: 200 }
+              ]
+            },
+            BURGER_SAUCES_GROUP,
+            BOISSON_GROUP
+          ]
+        },
+        {
+          slug: "giant",
+          name: "Giant",
+          description: "2 steaks 90g, sauce giant, fromage",
+          basePrice: 790,
+          image: "/images/Giant.png",
           optionGroups: [
             {
               slug: "formule-burger",
@@ -393,7 +393,7 @@ export const menuData = {
           name: "Tasty",
           description: "Steak 90g, poulet pané, cornichons, salade, tomate, oignons, fromage",
           basePrice: 800,
-          image: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&q=80",
+          image: "/images/tasty-burger.png",
           optionGroups: [
             {
               slug: "formule-burger",
@@ -414,7 +414,7 @@ export const menuData = {
           name: "B-Dwich",
           description: "2 steaks 45g, cornichons, fromage",
           basePrice: 650,
-          image: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&q=80",
+          image: "/images/b-dwich.png",
           optionGroups: [
             {
               slug: "formule-burger",
@@ -435,7 +435,28 @@ export const menuData = {
           name: "Authentique Chicken",
           description: "Poulet pané, salade, fromage",
           basePrice: 650,
-          image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80",
+          image: "/images/authentique-chicken.png",
+          optionGroups: [
+            {
+              slug: "formule-burger",
+              name: "Formule",
+              type: "SINGLE",
+              required: true,
+              options: [
+                { name: "Burger Seul", priceDelta: 0 },
+                { name: "Menu (Frites + Boisson)", priceDelta: 200 }
+              ]
+            },
+            BURGER_SAUCES_GROUP,
+            BOISSON_GROUP
+          ]
+        },
+        {
+          slug: "mozza",
+          name: "Mozza Burger",
+          description: "Steak 90g, mozzarella fondante, tomate, salade",
+          basePrice: 750,
+          image: "/images/mozza.png",
           optionGroups: [
             {
               slug: "formule-burger",
@@ -458,14 +479,14 @@ export const menuData = {
       name: "Nos Sandwichs",
       description: "Pain Kebab ou Tortilla",
       emoji: "🥙",
-      image: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=800&q=80",
+      image: "/images/kebab.png",
       products: [
         {
           slug: "kebab",
           name: "Kebab",
           description: "Emincé kebab, salade, tomate, oignons, fromage",
           basePrice: 600,
-          image: "https://images.unsplash.com/photo-1561651823-34feb02250e4?w=600&q=80",
+          image: "/images/kebab.png",
           optionGroups: [
             {
               slug: "pain",
@@ -521,7 +542,7 @@ export const menuData = {
           name: "Steak",
           description: "Steak, salade, tomate, oignons, fromage",
           basePrice: 600,
-          image: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&q=80",
+          image: "/images/steak.png",
           optionGroups: [
             {
               slug: "pain",
@@ -582,7 +603,7 @@ export const menuData = {
           name: "Escalope",
           description: "Escalope de poulet, salade, tomate, oignons, fromage",
           basePrice: 600,
-          image: "https://images.unsplash.com/photo-1604909052743-94e838986d24?w=600&q=80",
+          image: "/images/escalope.png",
           optionGroups: [
             {
               slug: "pain",
@@ -643,7 +664,7 @@ export const menuData = {
           name: "Curry",
           description: "Chicken curry, salade, tomate, oignons, fromage",
           basePrice: 700,
-          image: "https://images.unsplash.com/photo-1606756790138-261d2b21cd75?w=600&q=80",
+          image: "/images/curry.png",
           optionGroups: [
             {
               slug: "pain",
@@ -704,7 +725,7 @@ export const menuData = {
           name: "Tandoori",
           description: "Chicken tandoori, salade, tomate, oignons, fromage",
           basePrice: 700,
-          image: "https://images.unsplash.com/photo-1618213837799-25d5552820d3?w=600&q=80",
+          image: "/images/tandoori.png",
           optionGroups: [
             {
               slug: "pain",
@@ -765,7 +786,7 @@ export const menuData = {
           name: "Le Suprême",
           description: "3 steaks 45g, oeuf, bacon, salade, tomate, oignons rouges, fromage",
           basePrice: 900,
-          image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600&q=80",
+          image: "/images/supreme.png",
           optionGroups: [
             {
               slug: "pain",
@@ -821,7 +842,7 @@ export const menuData = {
           name: "Le Full",
           description: "2 steaks, escalope, sauce fromagère, salade, tomate, oignons, fromage",
           basePrice: 1000,
-          image: "https://images.unsplash.com/photo-1481070555726-e2fe8357571d?w=600&q=80",
+          image: "/images/full.png",
           optionGroups: [
             {
               slug: "pain",
@@ -878,9 +899,9 @@ export const menuData = {
         {
           slug: "farmer",
           name: "Farmer",
-          description: "Escalope, Boursin, oeuf, jambon de dinde, salade, tomate, oignons, fromage",
+          description: "2 escalopes, poivrons, oignons, fromage fondu",
           basePrice: 900,
-          image: "https://images.unsplash.com/photo-1550317138-10000687a72b?w=600&q=80",
+          image: "/images/farmer.png",
           optionGroups: [
             {
               slug: "pain",
@@ -940,7 +961,7 @@ export const menuData = {
           name: "Le Casdal",
           description: "2 steaks 45g, viande au choix, salade, tomate, oignons, fromage",
           basePrice: 900,
-          image: "https://images.unsplash.com/photo-1550317138-10000687a72b?w=600&q=80",
+          image: "/images/casdal.png",
           optionGroups: [
             {
               slug: "pain",
@@ -1014,14 +1035,14 @@ export const menuData = {
       name: "Tex Mex & Barquettes",
       description: "Snacks et frites",
       emoji: "🍟",
-      image: "https://images.unsplash.com/photo-1630384060421-cb20aeb56f83?w=800&q=80",
+      image: "/images/frite.png",
       products: [
         {
           slug: "nuggets",
           name: "Nuggets",
           description: "Nuggets de poulet croustillants",
           basePrice: 350,
-          image: "https://images.unsplash.com/photo-1562967914-608f82629710?w=600&q=80",
+          image: "/images/nuggets.png",
           optionGroups: [
             {
               slug: "quantite-nuggets",
@@ -1040,7 +1061,7 @@ export const menuData = {
           name: "Tenders",
           description: "Filets de poulet panés (4 pièces)",
           basePrice: 500,
-          image: "https://images.unsplash.com/photo-1585325701165-fc1f97060794?w=600&q=80",
+          image: "/images/tenders.png",
           optionGroups: []
         },
         {
@@ -1048,15 +1069,7 @@ export const menuData = {
           name: "Mozza Stick",
           description: "Bâtonnets de mozzarella (4 pièces)",
           basePrice: 350,
-          image: "https://images.unsplash.com/photo-1531749668029-2db88e4276c7?w=600&q=80",
-          optionGroups: []
-        },
-        {
-          slug: "jalapenos",
-          name: "Jalapenos",
-          description: "Jalapenos (4 pièces)",
-          basePrice: 350,
-          image: "https://images.unsplash.com/photo-1546549032-9571cd6b27df?w=600&q=80",
+          image: "/images/mozza.png",
           optionGroups: []
         },
         {
@@ -1064,7 +1077,7 @@ export const menuData = {
           name: "Barquette de Frites",
           description: "Frites croustillantes",
           basePrice: 250,
-          image: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=600&q=80",
+          image: "/images/frite.png",
           optionGroups: [
             {
               slug: "taille-frites",
@@ -1083,7 +1096,7 @@ export const menuData = {
           name: "Barquette Kebab",
           description: "Viande de kebab seule",
           basePrice: 600,
-          image: "https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=600&q=80",
+          image: "/images/barquette-kebab.png",
           optionGroups: []
         }
       ]
@@ -1093,14 +1106,14 @@ export const menuData = {
       name: "Menu enfant",
       description: "Pour les petits gourmands",
       emoji: "🧒",
-      image: "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=800&q=80",
+      image: "/images/menu-enfant.png",
       products: [
         {
           slug: "menu-enfant",
           name: "Menu enfant",
           description: "Plat + frites + Capri Sun + surprise",
           basePrice: 550,
-          image: "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=600&q=80",
+          image: "/images/menu-enfant.png",
           optionGroups: [
             {
               slug: "choix-menu-enfant",

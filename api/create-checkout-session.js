@@ -54,10 +54,8 @@ export default async function handler(req, res) {
     // Calculer le sous-total
     const subtotal = items.reduce((sum, item) => sum + (item.unitPrice * item.quantity), 0);
 
-    // Base URL pour les redirections
-    const baseUrl = process.env.VERCEL_URL 
-      ? `https://${process.env.VERCEL_URL}` 
-      : (process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:5173');
+    // Base URL pour les redirections - UTILISER PUBLIC_URL pour éviter les URL de preview
+    const baseUrl = process.env.PUBLIC_URL || process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:5173';
 
     // Créer la session Stripe Checkout
     const session = await stripe.checkout.sessions.create({
